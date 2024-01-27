@@ -45,8 +45,8 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.1</version>
                 <configuration>
-                    <!-- Configure the path to the web.xml file -->
-                    <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+                    <!-- Configure the WAR file name if needed -->
+                    <warName>your-war-file-name</warName>
                     <!-- Optionally configure additional settings -->
                 </configuration>
             </plugin>
