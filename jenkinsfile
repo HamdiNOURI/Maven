@@ -1,0 +1,27 @@
+podTemplate(yaml: """
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: test
+    image: hnouri86/mavenassur:1.0.20240127
+    command:
+    - cat
+    tty: true
+"""
+) {
+    node(POD_LABEL) {
+
+        stage('Download from SCM') {
+            container('test') {
+                checkout scm
+            }
+        }
+
+        stage('MAVEN VERSION TEST') {
+            container('test') {
+                sh 'mvn --version'
+            }
+        }
+    }
+}
