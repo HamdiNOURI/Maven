@@ -24,6 +24,15 @@ pipeline {
         }
       }
     }
+    stage('code review to check quality of code') {
+      steps {
+        container('maven') {
+          sh 'mvn pmd:pmd'
+          sh 'echo code review done'
+
+        }
+      }
+    }
     stage('Run maven') {
       steps {
         container('maven') {
