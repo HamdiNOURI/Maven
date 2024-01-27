@@ -15,11 +15,21 @@ pipeline {
     }
   }
   stages {
-    stage('Run maven') {
+    stage('Run maven version') {
       steps {
         container('maven') {
           sh 'mvn -version'
           sh ' echo Hello World'
+
+        }
+      }
+    }
+    stage('Run maven') {
+      steps {
+        container('maven') {
+          sh ' echo Hello World'
+          sh 'mvn clean package'
+
 
         }
       }
