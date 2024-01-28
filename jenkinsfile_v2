@@ -5,7 +5,7 @@ metadata:
   labels:
     app: mavenassur
 spec:
-  replicas: 3  # You can adjust the number of replicas as needed
+  replicas: 1  
   selector:
     matchLabels:
       app: mavenassur
@@ -18,5 +18,5 @@ spec:
       - name: mavenassur
         image: hnouri86/mavenassur:1.0.20240127
         ports:
-        - containerPort: 8080  # Assuming your application listens on port 8080
-        command: ["sh", "-c", "sleep 3600"]  # Sleep for 3600 seconds (1 hour) after starting
+        - containerPort: 8080 
+        command: ["sh", "-c", "sleep 3600"]  
