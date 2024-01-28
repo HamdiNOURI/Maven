@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mavenassur-deployment
+  labels:
+    app: mavenassur
+spec:
+  replicas: 3  # You can adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: mavenassur
+  template:
+    metadata:
+      labels:
+        app: mavenassur
+    spec:
+      containers:
+      - name: mavenassur
+        image: hnouri86/mavenassur:1.0.20240127
+        ports:
+        - containerPort: 8080  # Assuming your application listens on port 8080
+        command: ["sh", "-c", "sleep 3600"]  # Sleep for 3600 seconds (1 hour) after starting
