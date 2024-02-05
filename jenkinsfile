@@ -42,7 +42,8 @@ pipeline {
     stage('Push to Nexus Repository') {
       steps {
         container('maven') {
-          sh 'mvn deploy:deploy-file -Dfile=target/*.war -DgroupId=your.group.id -DartifactId=your-artifact-id -Dversion=1.0.0 -Dpackaging=war -Durl=http://192.168.1.196:8081/repository/AssurProject-Test/ -DrepositoryId=nexus-repo-id'
+          #sh 'mvn deploy:deploy-file -Dfile=target/*.war -DgroupId=your.group.id -DartifactId=your-artifact-id -Dversion=1.0.0 -Dpackaging=war -Durl=http://192.168.1.196:8081/repository/AssurProject-Test/ -DrepositoryId=nexus-repo-id'
+          sh 'ping 192.168.1.196'
         }
       }
     }
