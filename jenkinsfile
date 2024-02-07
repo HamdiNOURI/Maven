@@ -6,11 +6,19 @@ pipeline {
         kind: Pod
         spec:
           containers:
-          - name: maven
+      containers:
+          - name: mavenassur
             image: hnouri86/mavenassur:1.0.20240127
-            command:
-            - cat
-            tty: true
+            command: ["/bin/sh", "-c"]
+            args: ["while true; do sleep 3600; done"]
+            securityContext:
+              allowPrivilegeEscalation: false
+              capabilities:
+                add:
+                  - NET_ADMIN
+          dnsPolicy: "Default"
+          hostNetwork: true
+
         '''
     }
   }
