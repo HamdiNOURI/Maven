@@ -6,7 +6,7 @@ pipeline {
         kind: Pod
         spec:
           containers:
-          - name: mavenassur
+          - name: maven
             image: hnouri86/mavenassur:1.0.20240127
             command: ["/bin/sh", "-c"]
             args: ["while true; do sleep 3600; done"]
