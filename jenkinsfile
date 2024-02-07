@@ -6,7 +6,6 @@ pipeline {
         kind: Pod
         spec:
           containers:
-      containers:
           - name: mavenassur
             image: hnouri86/mavenassur:1.0.20240127
             command: ["/bin/sh", "-c"]
