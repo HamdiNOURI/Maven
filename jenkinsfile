@@ -50,7 +50,7 @@ pipeline {
       steps {
         container('maven') {
           sh 'echo Hello World'
-          sh 'mvn -s ./conf/settings.xml clean deploy -e'
+          sh 'mvn -s ./conf/settings.xml clean deploy -X'
         }
       }
     }

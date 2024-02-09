@@ -133,13 +133,13 @@ under the License.
     -->
 	<server>
       <id>releasenexus</id>
-      <username>admin</username>
-      <password>hnouri</password>
+      <username>nexus</username>
+      <password>nexus</password>
    </server>
    	<server>
       <id>snapshotnexus</id>
-      <username>admin</username>
-      <password>hnouri</password>
+      <username>nexus</username>
+      <password>nexus</password>
    </server>
    
   </servers>
