@@ -67,7 +67,7 @@
   <!-- <id>releasenexus</id> -->
   <!-- <name>release nexus</name> -->
   <!-- <url>http://192.168.1.196:8081/repository/Assur-Test/</url> -->
- </repository>
+ <!-- </repository> -->
 
 </distributionManagement>
 </project>
