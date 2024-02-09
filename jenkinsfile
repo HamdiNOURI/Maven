@@ -46,7 +46,7 @@ pipeline {
         }
       }
     }
-    stage('Run maven') {
+    stage('Run maven Deploy') {
       steps {
         container('maven') {
           sh 'echo Hello World'
