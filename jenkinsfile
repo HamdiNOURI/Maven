@@ -46,13 +46,20 @@ pipeline {
         }
       }
     }
-    stage('Push to Nexus Repository') {
+    stage('Run maven') {
       steps {
         container('maven') {
-          sh 'mvn -X deploy:deploy-file -Dfile=target/output-file.war -DgroupId=your.group.id -DartifactId=your-artifact-id -Dversion=1.0.0 -Dpackaging=war -Durl=http://192.168.1.196:8081/repository/Assur-Test/ -DrepositoryId=nexus-repo-id'
-
+          sh 'echo Hello World'
+          sh 'mvn -s ./conf/settings.xml clean deploy'
         }
       }
     }
+    //stage('Push to Nexus Repository') {
+    //  steps {
+    //    container('maven') {
+    //      sh 'mvn -X deploy:deploy-file -Dfile=target/output-file.war -DgroupId=your.group.id -DartifactId=your-artifact-id -Dversion=1.0.0 -Dpackaging=war //-Durl=http://192.168.1.196:8081/repository/Assur-Test/ -DrepositoryId=nexus-repo-id'
+    //    }
+    //  }
+    //}
   }
 }
