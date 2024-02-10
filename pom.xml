@@ -48,6 +48,14 @@
                     <!-- Configure the path to the web.xml file -->
                     <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
                     <!-- Optionally configure additional settings -->
+                <!-- Include the sql folder and its contents -->
+					<webResources>
+						<resource>
+							<directory>src/main/sql</directory>
+							<targetPath>sql</targetPath>
+						</resource>
+					</webResources>
+                <!-- Include the sql folder and its contents -->
                 </configuration>
             </plugin>
         </plugins>
